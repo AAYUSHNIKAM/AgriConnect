@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Portal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Optional: Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Agriculture Portal</h1>
+        <p>Your one-stop solution for all agricultural needs!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>This platform is dedicated to helping farmers and agriculture enthusiasts with the latest blogs, tools, and resources to enhance productivity.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Access insightful blogs on modern farming techniques.</li>
+                <li>Shop for high-quality agricultural tools and seeds.</li>
+                <li>Connect with other farmers and experts in the community.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Agriculture Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
