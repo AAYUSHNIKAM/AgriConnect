@@ -1,0 +1,126 @@
+<!-- <h1>Welcome, {{ user.username }}</h1>
+<p>Email: {{ user.email }}</p>
+<nav>
+    <a href="{% url 'blogs' %}">Blogs</a>
+    <a href="{% url 'shop' %}">shop</a>
+    <a href="{% url 'market' %}">market</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</nav> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Internal CSS for quick styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+        }
+
+        .firstsec{
+            height: 90vh;
+            width: 10vh;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ user.username }}</h1>
+            <p>Email: {{ user.email }}</p>
+        </header>
+        
+        <nav>
+            <a href="{% url 'blogs' %}">Blogs</a>
+            <a href="{% url 'shop' %}">Shop</a>
+            <a href="{% url 'market' %}">Market</a>
+            <a href="{% url 'alert' %}">Alert</a>
+            <a href="{% url 'analyze' %}">Analyze</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </nav>
+
+
+       
+    </div>
+
+
+    {% load static %}
+    <div class="container" style="display:flex">
+        <img src="{% static 'image/home.jpg' %}" style="width: 50%;" alt="Home Image">
+        <img src="{% static 'image/home.jpg' %}" style="width: 50%;" alt="Home Image">
+    </div>
+    <!-- <p>Static URL: {% static 'image/home.jpg' %}</p> -->
+    
+</body>
+</html>

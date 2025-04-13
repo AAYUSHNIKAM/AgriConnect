@@ -1,0 +1,44 @@
+<!-- market.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Market</h1>
+    <form method="POST" action="{% url 'market' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="product_name">Product Name</label>
+            <input type="text" class="form-control" id="product_name" name="product_name" required>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_no">Phone Number</label>
+            <input type="text" class="form-control" id="phone_no" name="phone_no" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if products %}
+        <h2>Submitted Products</h2>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.product_name }}</h5>
+                        <p class="card-text">Quantity: {{ product.quantity }}</p>
+                        <p class="card-text">
+                            <a href="https://wa.me/{{ product.phone_no }}" target="_blank">{{ product.phone_no }}</a><br>
+                            <button><a href="tel:{{ product.phone_no }}" target="_blank">call --> {{ product.phone_no }}</a></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

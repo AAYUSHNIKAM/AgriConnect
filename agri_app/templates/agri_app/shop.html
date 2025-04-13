@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}  <!-- Add this line -->
+
+{% block content %}
+<div class="container">
+    <h1>Shop</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3">
+            <div class="card">
+                <!-- Ensure the image path is correct -->
+                <img src="{% static 'images/'|add:product.image %}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>${{ product.price }}</strong></p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
